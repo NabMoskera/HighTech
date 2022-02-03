@@ -1,0 +1,361 @@
+// GOOGLE FONTS*******************
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
+
+// RESET**************************
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// VARIABLES***********************
+
+// polices
+$size_gen: 1rem;
+$size_title1: 3.6rem;
+$size_title2: 2.4rem;
+$size_title3: 1.8rem;
+$line_height: 2.0rem;
+$font_gen: 'Open sans';
+$font_title: 'Raleway';
+// couleurs
+$bg_darkgrey: #eee;
+$bg_header: #0c6588;
+$bg_menu: #e2f7ff;
+$bg_main: #fff;
+$bg_footer: #333;
+$color_title: #333;
+$color_text: #555;
+$color_header: #e2f7ff;
+$color_footer: #ddd;
+$color_link: #0c6588;
+$color_link_hover: #000;
+$color_link_footer: #eee;
+// bordures
+$border_sm: 1px solid #eee;
+$border_md: 1px solid #ddd;
+$border_lg: 2px solid #eee;
+// ombres
+$shadow_sm: 0 0 1px rgba(0,0,0,0.2);
+$shadow_md: 0 0 3px rgba(0,0,0,0.3);
+$shadow_lg: 0 0 5px rgba(0,0,0,0.4);
+$shadow_xl: 0 10px 20px rgba(0,0,0,0.5);
+
+
+// GENERALITIES*******************************************
+
+
+body {
+
+    font-size: $size_gen;
+    line-height: $line_height;
+    font-family: $font_gen;
+    color: $color_text;
+    background-color: $bg_darkgrey;
+
+    h1 {
+        font-size: $size_title1;
+        font-family: $font_title;
+        color: $color_title;
+    }
+
+    h2 {
+        font-size: $size_title2;
+        font-family: $font_title;
+        color: $color_title;
+    }
+
+    h3 {
+        font-size: $size_title3;
+        font-family: $font_title;
+        color: $color_title;
+    }
+
+    .header {
+        background-color: $bg_header;
+        background-image: url(/ressources/images/header.jpg);
+        background-size: cover;
+        color: $color_header;
+        
+        .menu {
+            background-color: $bg_menu;
+        }
+    }
+
+    .container {
+        max-width: 80%;
+        background-color: $bg_main;
+        margin: auto;
+        
+    }
+
+    .footer {
+        background-color: $bg_footer;
+        color: $color_footer;
+        a {
+            color: $color_link_footer;
+        }
+    }
+
+    a {
+        color: $color_link;
+        text-decoration: none;
+
+        &:hover {
+            color: $color_link_hover;
+        }
+    }
+}
+
+
+// HEADER***************************************************
+
+
+.header {
+    height: 209px;
+    width: 100%;
+    
+    .options {
+        height: 25px;
+        width: 80%;
+        background-color: $bg_menu;
+        margin: auto; 
+    }
+    .banner {
+        width: 80%;
+        height: 120px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .banner_logo {
+        width: 5%;
+        height: 120px;
+    }
+    .banner_title {
+        width: 25%;
+        margin: 0 1em;
+        h1 {
+            color: $color_header;
+            font-size: $size_title2;
+        }
+        p {
+            font-size: $size_gen;
+        }
+    }
+    .banner_search {
+        width: 45%;
+        height: 50px;
+            border: 1px solid white;
+            border-radius: 25px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            -ms-border-radius: 25px;
+            -o-border-radius: 25px;
+            background-color: $bg_header;
+            display: flex;
+            flex-direction: row;
+            
+        input {
+            color: white;
+            border: none;
+            background-color: transparent;
+            width: 60%;
+            padding: 0 3em;
+                        
+        }
+        select {
+            border: none;
+            background-color: transparent;
+            color: white;
+        }
+    }
+    // menu****************************
+    .menu {
+        background-color: $bg_menu;
+        width: 80%;
+        height: 63.5px;
+        margin: auto;
+        ul:first-child {
+            text-align: center;
+        }
+        
+        ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style-type: none;
+            position: relative;
+            
+            li {
+                width: 100%;
+                padding: 0.7em 0.5em;
+                font-size: 1.3rem;
+        
+                &:hover {
+                    background-color: $bg_main;
+                    color: $color_link_hover;
+                    .menu_div {
+                        display: flex;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: $bg_main;
+                        ul {
+                            width: 50%;
+                            
+                        }
+                        ul>li:first-child {
+                            color: $color_text;
+                            font-size: $size_title3;
+                            margin: 0.5em 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu_div {
+            width: 100%;
+            display: none;
+            box-shadow: $shadow_lg;
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0.5em;
+                font-size: 1rem;
+
+                li {
+                    padding: 0.2em 0;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+// MAIN***************************************************
+
+
+.container {
+    .location {
+        width: 100%;
+        height: fit-content;
+    }
+    .produit {
+        padding: 1em;
+
+        h2 {
+            margin: 1em 0;
+        }
+        .liens {
+            width: 100%;
+            height: fit-content;
+        }
+        // ARTICLE UN
+        .presentation {
+         
+            h2::after {
+            }
+            .labels {
+            }
+            .presentation_content {
+                display: flex;
+
+                img {
+                width: 50%;
+                height: 50%;
+                }
+            }
+                .presentation_description {
+                width: 50%;
+                height: 60%;
+                display: block;
+                img {
+                    width: 20%;
+                }
+                .logo {
+                    display: flex;
+                    margin-bottom: 1em;
+                    img {
+                        margin: 0 1em;
+                    }
+                }
+                .prix_garantie {
+                    max-width: 90%;
+                    margin: auto;
+                }
+                .prix {
+                    background-color: $bg_darkgrey;
+                    width: 100%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1.5em 1em;
+                    
+                   
+                    p {
+                        font-size: 0.8rem;
+                        text-align: left;
+                        
+                    }
+                    p:first-of-type {
+                        font-size: $size_title3;
+                        font-weight: 600;
+                       
+                    }
+                }
+                .garantie {
+                    background-color: rgb(196, 193, 193);
+                    width: 100%;
+                    margin: auto;
+                    font-size: 1rem;
+                    text-align: center;
+                    padding: 1.5em 1em;
+                    margin-bottom: 1em;
+                }
+                p {
+                    font-size: 1rem;
+                    width: 90%;
+                    margin: auto;
+                    line-height: $line_height;
+                }
+                ul {
+                    width: 80%;
+                    font-size: 1rem;
+                    margin: auto;
+                    line-height: $line_height;
+                    margin-top: 0.5em;
+                }
+            
+            
+
+            }
+            
+            
+
+        }
+        // ARTICLE DEUX
+        article {
+            h3 {
+                margin: 1em 0;
+            }
+            .descriptif {
+            display: flex;
+            div {
+                width: 50%;
+            }
+            img {
+                
+                border: 1px solid silver;
+            }
+        }
+        }
+        
+    }
+
+}
