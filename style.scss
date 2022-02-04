@@ -1,5 +1,5 @@
 // GOOGLE FONTS*******************
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap");
 
 // RESET**************************
 * {
@@ -14,9 +14,9 @@ $size_gen: 1rem;
 $size_title1: 3.6rem;
 $size_title2: 2.4rem;
 $size_title3: 1.8rem;
-$line_height: 2.0rem;
-$font_gen: 'Open sans';
-$font_title: 'Raleway';
+$line_height: 2rem;
+$font_gen: "Open sans";
+$font_title: "Raleway";
 // couleurs
 $bg_darkgrey: #eee;
 $bg_header: #0c6588;
@@ -35,23 +35,24 @@ $border_sm: 1px solid #eee;
 $border_md: 1px solid #ddd;
 $border_lg: 2px solid #eee;
 // ombres
-$shadow_sm: 0 0 1px rgba(0,0,0,0.2);
-$shadow_md: 0 0 3px rgba(0,0,0,0.3);
-$shadow_lg: 0 0 5px rgba(0,0,0,0.4);
-$shadow_xl: 0 10px 20px rgba(0,0,0,0.5);
-
+$shadow_sm: 0 0 1px rgba(0, 0, 0, 0.2);
+$shadow_md: 0 0 3px rgba(0, 0, 0, 0.3);
+$shadow_lg: 0 0 5px rgba(0, 0, 0, 0.4);
+$shadow_xl: 0 10px 20px rgba(0, 0, 0, 0.5);
 
 // GENERALITIES*******************************************
 
-
 body {
-
     font-size: $size_gen;
     line-height: $line_height;
     font-family: $font_gen;
     color: $color_text;
     background-color: $bg_darkgrey;
-
+    span {
+        font-family: 'icomoon';
+        color: $color_link;
+        width: 2px;
+    }
     h1 {
         font-size: $size_title1;
         font-family: $font_title;
@@ -75,7 +76,7 @@ body {
         background-image: url(/ressources/images/header.jpg);
         background-size: cover;
         color: $color_header;
-        
+
         .menu {
             background-color: $bg_menu;
         }
@@ -85,7 +86,6 @@ body {
         max-width: 80%;
         background-color: $bg_main;
         margin: auto;
-        
     }
 
     .footer {
@@ -106,19 +106,17 @@ body {
     }
 }
 
-
 // HEADER***************************************************
-
 
 .header {
     height: 209px;
     width: 100%;
-    
+
     .options {
         height: 25px;
         width: 80%;
         background-color: $bg_menu;
-        margin: auto; 
+        margin: auto;
     }
     .banner {
         width: 80%;
@@ -147,23 +145,22 @@ body {
     .banner_search {
         width: 45%;
         height: 50px;
-            border: 1px solid white;
-            border-radius: 25px;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
-            -ms-border-radius: 25px;
-            -o-border-radius: 25px;
-            background-color: $bg_header;
-            display: flex;
-            flex-direction: row;
-            
+        border: 1px solid white;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        background-color: $bg_header;
+        display: flex;
+        flex-direction: row;
+
         input {
             color: white;
             border: none;
             background-color: transparent;
             width: 60%;
             padding: 0 3em;
-                        
         }
         select {
             border: none;
@@ -180,19 +177,19 @@ body {
         ul:first-child {
             text-align: center;
         }
-        
+
         ul {
             display: flex;
             justify-content: space-around;
             align-items: center;
             list-style-type: none;
             position: relative;
-            
+
             li {
                 width: 100%;
                 padding: 0.7em 0.5em;
                 font-size: 1.3rem;
-        
+
                 &:hover {
                     background-color: $bg_main;
                     color: $color_link_hover;
@@ -204,9 +201,8 @@ body {
                         background-color: $bg_main;
                         ul {
                             width: 50%;
-                            
                         }
-                        ul>li:first-child {
+                        ul > li:first-child {
                             color: $color_text;
                             font-size: $size_title3;
                             margin: 0.5em 0;
@@ -220,7 +216,7 @@ body {
             width: 100%;
             display: none;
             box-shadow: $shadow_lg;
-            
+
             ul {
                 display: flex;
                 flex-direction: column;
@@ -237,41 +233,56 @@ body {
     }
 }
 
-
 // MAIN***************************************************
-
 
 .container {
     .location {
         width: 100%;
         height: fit-content;
     }
+
+    // SECTION UN
     .produit {
         padding: 1em;
-
-        h2 {
+        h1 {
             margin: 1em 0;
+            font-size: $size_title1;
+        }
+        h3,
+        h2 {
+            font-size: $size_title2;
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+        }
+        h2::after,
+        h3::after {
+            content: "";
+            height: 40px;
+            flex: 1;
+            margin-left: 1em;
+            background-image: radial-gradient(grey 3px, transparent 4px);
+            background-size: 40px 40px;
         }
         .liens {
             width: 100%;
             height: fit-content;
+            a {
+                margin: 0 0.7em;
+                text-decoration: underline;
+            }
         }
         // ARTICLE UN
         .presentation {
-         
-            h2::after {
-            }
-            .labels {
-            }
             .presentation_content {
                 display: flex;
 
                 img {
-                width: 50%;
-                height: 50%;
+                    width: 50%;
+                    height: 50%;
                 }
             }
-                .presentation_description {
+            .presentation_description {
                 width: 50%;
                 height: 60%;
                 display: block;
@@ -296,17 +307,14 @@ body {
                     display: flex;
                     flex-direction: column;
                     padding: 1.5em 1em;
-                    
-                   
+
                     p {
                         font-size: 0.8rem;
                         text-align: left;
-                        
                     }
                     p:first-of-type {
                         font-size: $size_title3;
                         font-weight: 600;
-                       
                     }
                 }
                 .garantie {
@@ -331,31 +339,175 @@ body {
                     line-height: $line_height;
                     margin-top: 0.5em;
                 }
-            
-            
-
-            }
-            
-            
-
-        }
-        // ARTICLE DEUX
-        article {
-            h3 {
-                margin: 1em 0;
-            }
-            .descriptif {
-            display: flex;
-            div {
-                width: 50%;
-            }
-            img {
-                
-                border: 1px solid silver;
             }
         }
-        }
-        
     }
+    //    SECTION DEUX
+    .descriptif {
+        padding: 1em;
+        h2 {
+            font-size: $size_title2;
+            padding-bottom: 1em;
+        }
+        h3 {
+            font-size: $size_title3;
+        }
+        h3,
+        h2 {
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+        }
+        h2::after,
+        h3::after {
+            content: "";
+            height: 40px;
+            flex: 1;
+            margin-left: 1em;
+            background-image: radial-gradient(grey 3px, transparent 4px);
+            background-size: 40px 40px;
+        }
+        article {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em 0;
 
+            div {
+                width: 45%;
+            }
+
+            img {
+                width: 45%;
+                border: 1px solid silver;
+                padding: 1em 2em;
+            }
+        }
+    }
+    // SECTION 3
+    .technique {
+        padding: 1em;
+
+        h2 {
+            font-size: $size_title2;
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+        }
+        h2::after {
+            content: "";
+            height: 40px;
+            flex: 1;
+            margin-left: 1em;
+            background-image: radial-gradient(grey 3px, transparent 4px);
+            background-size: 40px 40px;
+        }
+        h3 {
+            font-size: $size_title3;
+            margin-left: 2em;
+        }
+        article {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2em 0;
+
+            table {
+                width: 60%;
+                border-collapse: collapse;
+                border: 2px solid silver;
+                tr {
+                    border: 1px solid silver;
+                    td {
+                        padding: 0 0.5em;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// FOOTER**************************
+
+.footer {
+    width: 100%;
+    background-color: $bg_footer;
+    height: 800px;
+    text-align: center;
+    color: $color_footer;
+    
+
+    .menu_footer {
+        background-color: $bg_menu;
+        width: 80%;
+        height: 63.5px;
+        margin: auto;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+
+            li {
+                width: 100%;
+                padding: 0.7em 0.5em;
+                font-size: 1.3rem;
+                text-align: center;
+
+                &:hover {
+                    background-color: $bg_main;
+                    a {
+                        color: $color_link_hover;
+                    }
+                }
+                a {
+                    color: $color_link;
+                }
+            }
+        }
+    }
+    .a_propos {
+        width: 80%;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+        h3 {
+            color: $color_footer;
+            font-size: $size_title3;
+            padding: 1em;
+        }
+        .paiement {
+            width: 50%;
+
+            img {
+                width: 70%;
+            }
+            ul {
+                list-style-type: none;
+                li {
+                    line-height: 1.5;
+                }
+                a {
+                    text-decoration: underline;
+                    font-size: 0.8em;
+                }
+            }
+        }
+        .social {
+            width: 50%;
+             
+            ul {
+                list-style-type: none;
+                li {
+                    line-height: 1.5;
+                }
+                a {
+                    text-decoration: underline;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
 }
