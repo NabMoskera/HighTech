@@ -12,6 +12,11 @@ body {
   background-color: #eee;
 }
 
+body span {
+  font-family: 'icomoon';
+  line-height: 0;
+}
+
 body h1 {
   font-size: 3.6rem;
   font-family: "Raleway";
@@ -241,8 +246,33 @@ body a:hover {
   padding: 1em;
 }
 
-.container .produit h2 {
+.container .produit h1 {
   margin: 1em 0;
+  font-size: 3.6rem;
+}
+
+.container .produit h3,
+.container .produit h2 {
+  font-size: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0;
+}
+
+.container .produit h2::after,
+.container .produit h3::after {
+  content: "";
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1em;
+  background-image: radial-gradient(grey 3px, transparent 4px);
+  background-size: 40px 40px;
 }
 
 .container .produit .liens {
@@ -250,6 +280,11 @@ body a:hover {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.container .produit .liens a {
+  margin: 0 0.7em;
+  text-decoration: underline;
 }
 
 .container .produit .presentation .presentation_content {
@@ -338,21 +373,219 @@ body a:hover {
   margin-top: 0.5em;
 }
 
-.container .produit article h3 {
-  margin: 1em 0;
+.container .descriptif {
+  padding: 1em;
 }
 
-.container .produit article .descriptif {
+.container .descriptif h2 {
+  font-size: 2.4rem;
+  padding-bottom: 1em;
+}
+
+.container .descriptif h3 {
+  font-size: 1.8rem;
+}
+
+.container .descriptif h3,
+.container .descriptif h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0;
 }
 
-.container .produit article .descriptif div {
+.container .descriptif h2::after,
+.container .descriptif h3::after {
+  content: "";
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1em;
+  background-image: radial-gradient(grey 3px, transparent 4px);
+  background-size: 40px 40px;
+}
+
+.container .descriptif article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 0;
+}
+
+.container .descriptif article div {
+  width: 45%;
+}
+
+.container .descriptif article img {
+  width: 45%;
+  border: 1px solid silver;
+  padding: 1em 2em;
+}
+
+.container .technique {
+  padding: 1em;
+}
+
+.container .technique h2 {
+  font-size: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 0;
+}
+
+.container .technique h2::after {
+  content: "";
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1em;
+  background-image: radial-gradient(grey 3px, transparent 4px);
+  background-size: 40px 40px;
+}
+
+.container .technique h3 {
+  font-size: 1.8rem;
+  margin-left: 2em;
+}
+
+.container .technique article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2em 0;
+}
+
+.container .technique article table {
+  width: 60%;
+  border-collapse: collapse;
+  border: 2px solid silver;
+}
+
+.container .technique article table tr {
+  border: 1px solid silver;
+}
+
+.container .technique article table tr td {
+  padding: 0 0.5em;
   width: 50%;
 }
 
-.container .produit article .descriptif img {
-  border: 1px solid silver;
+.footer {
+  width: 100%;
+  background-color: #333;
+  height: 800px;
+  text-align: center;
+  color: #ddd;
+}
+
+.footer .menu_footer {
+  background-color: #e2f7ff;
+  width: 80%;
+  height: 63.5px;
+  margin: auto;
+}
+
+.footer .menu_footer ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+}
+
+.footer .menu_footer ul li {
+  width: 100%;
+  padding: 0.7em 0.5em;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.footer .menu_footer ul li:hover {
+  background-color: #fff;
+}
+
+.footer .menu_footer ul li:hover a {
+  color: #000;
+}
+
+.footer .menu_footer ul li a {
+  color: #0c6588;
+}
+
+.footer .a_propos {
+  width: 80%;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.footer .a_propos h3 {
+  color: #ddd;
+  font-size: 1.8rem;
+  padding: 1em;
+}
+
+.footer .a_propos .paiement {
+  width: 50%;
+}
+
+.footer .a_propos .paiement img {
+  width: 70%;
+}
+
+.footer .a_propos .paiement ul {
+  list-style-type: none;
+}
+
+.footer .a_propos .paiement ul li {
+  line-height: 1.5;
+}
+
+.footer .a_propos .paiement ul a {
+  text-decoration: underline;
+  font-size: 0.8em;
+}
+
+.footer .a_propos .social {
+  width: 50%;
+}
+
+.footer .a_propos .social ul {
+  list-style-type: none;
+}
+
+.footer .a_propos .social ul li {
+  line-height: 1.5;
+}
+
+.footer .a_propos .social ul a {
+  text-decoration: underline;
+  font-size: 0.8em;
 }
 /*# sourceMappingURL=style.css.map */
